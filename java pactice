@@ -1,0 +1,138 @@
+HEre I will solve some question and do a mini project to understand the java. 
+Question 1 (Beginner – Variables & Input/Output)
+Problem:
+Write a Java program that:
+Takes two integers as input from the user.
+Their sum, Their difference ,Their product, Their quotient (integer division)
+Answer: 
+import java.util.Scanner;
+
+public class practice {
+    public static void main(String [] arg) {
+       // tp take the input we have to write this line one time.
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the 1st number = ");
+        int a = sc.nextInt();
+
+        System.out.println("Enter your 2nd number = ");
+        int b = sc.nextInt();
+
+        int sum = a+b;
+        int product = a*b;
+        int diff = a-b;
+        int quat = a/b;
+
+        System.out.println("Sum of two numbers is = " + sum);
+        System.out.println("Differeence of two numbers is = " + diff);
+        System.out.println("product of two numbers is = " + product);
+        System.out.println("Quotient of two numbers is = " + quat);
+      
+    }
+}
+
+
+Question 2 (Beginner – Conditions & Loops)
+Problem:
+Write a Java program that:
+
+Takes a positive integer n from the user.
+
+Prints whether the number is prime or not prime.
+
+Requirements:
+
+Use a loop to check divisibility.
+
+Use an if statement for the decision.
+
+
+
+Question 3 (Beginner → Intermediate: Arrays and Loops)
+Problem:
+Write a Java program that:
+
+Asks the user how many numbers they want to enter.
+
+Takes that many integers as input and stores them in an array.
+
+Calculates and displays:
+
+The largest number
+
+The smallest number
+
+The sum of all numbers
+
+The average (as a double)
+
+Hints/Requirements:
+
+Use a for loop to fill the array.
+
+Use another for loop to process (find max, min, sum).
+
+Average = sum ÷ total count (cast to double).
+
+This problem will help you practice:
+
+Arrays
+
+Loops
+
+Basic math
+
+
+
+import java.util.Scanner;
+
+public class practice {
+   public practice() {
+   }
+
+   public static void main(String[] var0) {
+    Scanner sc= new Scanner(System.in);
+
+    System.out.println("How many numbers will you input ?");
+    int n = sc.nextInt();
+
+    int [] array = new int[n];
+    for(int i =0; i<n; i++){
+        System.out.println("Input the number "+ (i+1));
+        array[i] = sc.nextInt();    
+    
+    }
+
+    //maximum
+    int max= array[0];
+    for(int i =0; i<n; i++){
+        if(max < array[i]){
+            max= array[i];
+        }
+    
+   }
+   System.out.println("Maximum of your numbers is "+ max);
+
+
+   //minimum
+    int min= array[0];
+    for(int i =0; i<n; i++){
+        if(min > array[i]){
+            min= array[i];
+        }
+    
+   }
+   System.out.println("Minimum of your numbers is "+ min);
+   //sum
+   int sum=0;
+   for(int i =0; i<n; i++){
+    sum =sum + array[i];
+   }
+   System.out.println("The sum is "+ sum);
+   // avarage
+   double avg= (double)sum/n; 
+   System.out.println("The avarage of your numbers is "+ avg);
+
+}
+}
+
