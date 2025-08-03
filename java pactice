@@ -136,3 +136,137 @@ public class practice {
 }
 }
 
+Question 4 (Strings – Intermediate)
+Problem:
+Write a Java program that:
+
+Takes a full sentence as input (can contain spaces).
+
+Prints:
+
+The sentence in uppercase
+
+The sentence in lowercase
+
+The number of vowels (a, e, i, o, u) in the sentence
+
+The number of words in the sentence
+
+Hints/Requirements:
+
+Use nextLine() instead of nextInt() for string input.
+
+Use .toUpperCase() and .toLowerCase() methods.
+
+To count vowels, loop through each character.
+
+To count words, you can split the string using split(" ").
+
+This question helps you practice:
+
+String methods
+
+Loops with characters
+
+Basic text processing
+
+import java.util.Scanner;
+
+public class practice {
+   public practice() {
+   }
+
+   public static void main(String[] var0) {
+    Scanner sc= new Scanner(System.in);
+    System.out.println("Write something ");
+    String a = sc.nextLine();
+    System.out.println("you write: " +  a);
+
+     //how many words
+     String[] words = a.trim().split("\\s+");
+    System.out.println("The number of words: " + words.length);
+
+     
+    // upper case and lower case
+    System.out.println("Uppercase: " + a.toUpperCase());
+
+    System.out.println("Lowercase: " + a.toLowerCase());
+    // find vowels
+
+      int count = 0;
+     int length = a.length();
+     for(int i=0 ;i<length; i++){
+         char ch = a.charAt(i);
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u'
+    || ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') {
+       
+        count ++;
+    }
+}
+     System.out.println("The vowels are "+ count);
+
+
+}
+}
+Question 6 (Patterns – Centered Pyramid)
+Write a Java program that takes an integer n and prints a centered pyramid like this:
+
+For n = 5, the output should be:
+
+markdown
+Copy
+Edit
+    *
+   ***
+  *****
+ *******
+*********
+Hints:
+Use two nested loops:
+
+First print spaces before stars
+
+Then print stars
+
+Rows: n (from 0 to n-1)
+
+Spaces on each row: (n - i - 1)
+
+Stars on each row: (2 * i + 1)
+import java.util.Scanner;
+
+public class practice {
+   public practice() {
+   }
+
+   public static void main(String[] var0) {
+    Scanner sc= new Scanner(System.in);
+    System.out.println("The value of n ");
+    int n = sc.nextInt();
+
+    for(int i =0; i<n; i++){
+        for(int j=0; j<n-1-i; j++){
+            System.out.print(" ");
+        }
+
+        //we can do it by one loop. 
+//         for (int j = 0; j < 2*i+1; j++) {
+//         System.out.print("*");
+// }
+
+        for(int j=0; j<=i; j++){
+            System.out.print("*");
+        }
+        for(int j=0 ; j<i; j++){
+            System.out.print("*");
+        }
+
+        System.out.println();
+    }
+
+
+   }
+}
+   
+
+
